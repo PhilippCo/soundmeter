@@ -21,6 +21,8 @@ configuration = dev.get_active_configuration()
 while True:
     dev.write(eout.bEndpointAddress, STATE_REQUEST)
     data = dev.read(ein.bEndpointAddress, eout.wMaxPacketSize, timeout=10000)
+    data = dev.read(ein.bEndpointAddress, eout.wMaxPacketSize, timeout=10000)
+
     print(data)
 
     if len(data) > 0:
